@@ -1,15 +1,34 @@
-{% extends "master.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Kulimo BdeB</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
 
-{% block title %}
-  Kulimo BdeB
-{% endblock %}
+<style>
+ .jumbotron {
+   background-color: #1756a3; 
+   color: #000000;
+}
+</style>
 
+<body>
+ <div class="jumbotron text-center">
+    <h1>Kulimo</h1>
+    <p>Marché de livres usagés pour les étudiants du cégep.</p>
+    <form class="form-inline">
+        <div class="input-group">
+            <button type="button" class="btn inscription">S'inscrire</button>
+          <div class="input-group-btn">
+            <button type="button" class="btn connexion">Se connecter</button>
+          </div>
+        </div>
+      </form>
+    </div>
 
-{% block content %}
-  <h1>Kulimo BdeB</h1>
-
-  <h3>Nos membres</h3>
-  
-  <p>Visionner la liste des membres <a href="accueil/">ici</a></p>
-  
-{% endblock %}
+</body>
+</html>
