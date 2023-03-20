@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +19,7 @@
 
 <body>
  <div class="jumbotron text-center">
-  <img style = "margin: 25px;" src = "https://lh3.googleusercontent.com/0n5o3DSF3Xrimnv-ZLLuuakIdWTuNWwfZrtTkIFRAZFfUhR6dBT_39QygqRk1LblXDTaW8GaGJDqYaJMx8UXVUDyW2Dhs5OEfcsUHDzXk6im56xaxqAbphpBMsHZ1xvm6GzUCw3y7w=w2400">  
+  <img style = "margin: 25px;" src = "{% static './img/logo.png' %}" class = "img-fluid">  
     <p>Marché de livres usagés pour les étudiants du cégep.</p>
     
     <form class="form-inline">
