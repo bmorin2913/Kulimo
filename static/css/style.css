@@ -1,0 +1,22 @@
+*{
+    margin:0
+
+}
+.footer{
+    background-color: #1756a3;
+}
+.container{
+    max-width: 1170px;
+    background-color: red;
+    margin:auto
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+ul{
+    list-style: none;
+}
+.footer-col{
+
+}
