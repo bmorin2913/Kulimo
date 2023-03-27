@@ -7,7 +7,7 @@
 }
 .container{
     max-width: 1170px;
-    background-color: blue;
+    background-color: #1756a3;
     margin:auto
 }
 .row{
@@ -20,4 +20,11 @@ ul{
 .footer-col{
     width: 25%;
     padding: 0 15px;
+}
+.footer-col h4{
+    font-size: 18px;
+    color: black;
+    margin-bottom: 30px;
+    font-weight: 500;
+    position: relative;
 }
