@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap%27');
 *{
     margin:0
 
@@ -27,4 +28,25 @@ ul{
     margin-bottom: 30px;
     font-weight: 500;
     position: relative;
+}
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #1756a3;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.footer-col ul li a{
+    font-size: 16px;
+    text-transoform : capitalize;
+    color: #ffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
 }
