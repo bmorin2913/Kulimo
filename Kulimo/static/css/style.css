@@ -25,7 +25,7 @@ ul{
 .footer-col h4{
     font-size: 18px;
     color: black;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     font-weight: 500;
     position: relative;
 }
@@ -34,19 +34,20 @@ ul{
     position: absolute;
     left: 0;
     bottom: -10px;
-    background-color: #1756a3;
+    background-color: black;
     height: 2px;
     box-sizing: border-box;
-    width: 50px;
+    width: 75px;
 }
 .footer-col ul li:not(:last-child){
     margin-bottom: 10px;
 }
 .footer-col ul li a{
     font-size: 16px;
-    text-transoform : capitalize;
-    color: #ffff;
+    text-transform : capitalize;
+    color: black;
     text-decoration: none;
     font-weight: 300;
-    color: #bbbbbb;
+    color: black;
+    display: block;
 }
