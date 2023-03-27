@@ -8,12 +8,16 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static './css/style.css' %}">  
 </head>
 
-<style>
- .jumbotron {
+<style> 
+.jumbotron {
    background-color: #1756a3; 
    color: #000000;
+}
+.container-fluid { 
+  padding: 60px 50px;
 }
 </style>
 
@@ -31,6 +35,30 @@
         </div>
       </form>
     </div>
+
+
+      
+      <footer class="footer">        
+        <div class = "container">
+          <div class = "row">
+            <div class = "footer-col">
+              <h4>Kulimo</h4>
+             <u1>
+              <li><a href="a_propos_de_nous">A propos de nous</a></li>  
+              <li><a href="nous_joindre">Nous joindre</a></li>  
+             </u1>
+            </div>
+            <div class = "footer-col">
+               <h4>Renseignements</h4>
+               <u1>
+                <li><a href="condition_d'utilisation">Conditions d'utilisation</a></li>  
+                <li><a href="a_lire">A lire</a></li>
+               </u1>
+            </div>
+          </div> 
+        </div>      
+      </footer>
+  
 
 </body>
 </html>
