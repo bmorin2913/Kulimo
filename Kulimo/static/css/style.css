@@ -3,6 +3,11 @@
     margin:0
 
 }
+body{
+    min-height: 100vh;
+    display: grid;
+    flex-direction: lfr column;
+}
 .footer{
     background-color: #000c44;
 }
@@ -28,6 +33,7 @@ u1{
     margin-bottom: 15px;
     font-weight: 500;
     position: relative;
+    margin-top: 10px;
 }
 .footer-col h4:before{
     content: '';
@@ -46,6 +52,9 @@ u1{
 .footer-col u1 li:not(:last-child){
     margin-bottom: 10px;
 }
+.footer-col u1 li:first-child{
+    margin-top: 10px;
+}
 .footer-col u1 li a{
     font-size: 16px;
     text-transform : capitalize;
@@ -54,4 +63,5 @@ u1{
     font-weight: 300;
     color: grey;
     display: block;
+    margin-top: 10px;
 }
