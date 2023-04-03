@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <title>À propos de nous</title>
-    <link rel="stylesheet" href="{% static './css/style.css' %}">  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -14,25 +14,52 @@
     <header>
       <h1>À propos de nous</h1>
     </header>
-    <main>
-      <section>
-        <h2>Our Story</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales libero ac nulla congue, id sagittis velit malesuada. Fusce fermentum bibendum ligula at rutrum. Sed efficitur euismod lorem, vitae blandit turpis bibendum a. Ut euismod ipsum a purus interdum eleifend.</p>
-      </section>
-      <section>
-        <h2>Notre équipe</h2>
-        <p>Voici notre équipe</p>
-        <ul>
-          <li>Benjamin Morin - CEO</li>
-          <li>Karan Kumar - Soutien technique</li>
-          <li>Anthony Lim - Directeur en chef du cabinet culinaire</li>
-        </ul>
-      </section>
-      <section>
-        <h2>Notre mission :</h2>
-        <p>Notre mission est de fournir aux étudiants un outil qui permet de faciliter leurs ventes de livres usagés !</p>
-      </section>
-    </main>
+    
+    <div class="row">
+        <div class="col-sm-3" style="background-color:rgb(255, 255, 255);">
+          <p> </p>
+        </div>
+        <div class="col-sm-6" style="background-color:rgb(255, 255, 255);">
+    
+            
+
+                
+                            <main>
+                                <section>
+                                <h2>Our Story</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales libero ac nulla congue, id sagittis velit malesuada. Fusce fermentum bibendum ligula at rutrum. Sed efficitur euismod lorem, vitae blandit turpis bibendum a. Ut euismod ipsum a purus interdum eleifend.</p>
+                                </section>
+                                <section>
+                                <h2>Notre équipe</h2>
+                                <p>Voici notre équipe</p>
+                                <ul>
+                                    <li>Benjamin Morin - CEO</li>
+                                    <li>Karan Kumar - Soutien technique</li>
+                                    <li>Anthony Lim - Directeur en chef du cabinet culinaire</li>
+                                </ul>
+                                </section>
+                                <section>
+                                <h2>Notre mission :</h2>
+                                <p>Notre mission est de fournir aux étudiants un outil qui permet de faciliter leurs ventes de livres usagés !</p>
+                                </section>
+                            </main>
+
+
+
+
+
+        </div>
+        <div class="col-sm-3" style="background-color:rgb(255, 255, 255);">
+            <p> </p>
+          </div>
+      </div>
+    
+
+
+
+
+
+
     {% include "footer.html" %}
     {% endblock %} 
   </body>
