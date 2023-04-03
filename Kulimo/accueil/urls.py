@@ -9,7 +9,9 @@ urlpatterns = [
     path("register", views.register_request, name="register"),
     path("login", views.login_request, name="login"),
     path('a_propos_de_nous', views.aboutUs, name = 'aboutUs' ),
-    path('nous_joindre', views.nousJoindre, name = 'nousJoindre' )
-
-
+    path('nous_joindre', views.nousJoindre, name = 'nousJoindre' ),
+    path("logout", views.logout_request, name= "logout"),
+    path("create", views.userposts_create_view, name= "userpost_create_view"),
+    path("list", views.userposts_list_view, name= "userpost_list_view"),
+    path("detail", views.userposts_detail_view, name= "userpost_detail_view")
 ]

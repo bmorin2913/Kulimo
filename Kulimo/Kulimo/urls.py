@@ -18,6 +18,7 @@ from django.urls import include, path
 from django.views.generic import RedirectView
 #from accueil.views import register_request, login_request
 from accueil.views import *
+from accueil.views import register_request, login_request, logout_request, userposts_create_view, userposts_list_view, userposts_detail_view
 
 urlpatterns = [
     #path('', include('accueil.urls')), 
@@ -27,5 +28,9 @@ urlpatterns = [
     path('register/', register_request, name='register'),
     path('login/', login_request, name='login'),
     path('a_propos_de_nous/', include('accueil.urls')),
-    path('nous_joindre/', include('accueil.urls'))
+    path('nous_joindre/', include('accueil.urls')),
+    path('logout/', logout_request, name='logout'),
+    path('create/', userposts_create_view, name='userpost_create_view'),
+    path('list/', userposts_list_view, name='userpost_list_view'),
+    path('detail/(?P<url>\S+)/$', userposts_detail_view, name='userpost_detail_view')
 ]
