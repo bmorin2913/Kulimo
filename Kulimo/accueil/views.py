@@ -64,3 +64,7 @@ def login_request(request):
 def aboutUs(request):
 	template = loader.get_template('a_propos_de_nous.html')
 	return HttpResponse(template.render())
+
+def nousJoindre(resquest):
+	template = loader.get_template('nous_joindre.html')
+	return HttpResponse(template.render())
