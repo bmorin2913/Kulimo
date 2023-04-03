@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>À propos de nous</title>
+    <link rel="stylesheet" href="{% static './css/style.css' %}">  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+   {% block content %}
+    <header>
+      <h1>À propos de nous</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Our Story</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales libero ac nulla congue, id sagittis velit malesuada. Fusce fermentum bibendum ligula at rutrum. Sed efficitur euismod lorem, vitae blandit turpis bibendum a. Ut euismod ipsum a purus interdum eleifend.</p>
+      </section>
+      <section>
+        <h2>Notre équipe</h2>
+        <p>Voici notre équipe</p>
+        <ul>
+          <li>Benjamin Morin - CEO</li>
+          <li>Karan Kumar - Soutien technique</li>
+          <li>Anthony Lim - Directeur en chef du cabinet culinaire</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Notre mission :</h2>
+        <p>Notre mission est de fournir aux étudiants un outil qui permet de faciliter leurs ventes de livres usagés !</p>
+      </section>
+    </main>
+    {% include "footer.html" %}
+    {% endblock %} 
+  </body>
+</html>

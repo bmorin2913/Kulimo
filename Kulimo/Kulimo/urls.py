@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import RedirectView
-from accueil.views import register_request, login_request
+#from accueil.views import register_request, login_request
+from accueil.views import *
 
 urlpatterns = [
     #path('', include('accueil.urls')), 
@@ -24,5 +25,6 @@ urlpatterns = [
     path('accueil/', include('accueil.urls')),
     path('admin/', admin.site.urls),
     path('register/', register_request, name='register'),
-    path('login/', login_request, name='login')
+    path('login/', login_request, name='login'),
+    path('a_propos_de_nous/', include('accueil.urls'))
 ]
