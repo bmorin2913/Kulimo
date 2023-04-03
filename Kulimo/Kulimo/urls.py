@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import RedirectView
-from accueil.views import register_request, login_request
+from accueil.views import register_request, login_request, logout_request, userposts_create_view, userposts_list_view, userposts_detail_view
 
 urlpatterns = [
     #path('', include('accueil.urls')), 
@@ -24,5 +24,9 @@ urlpatterns = [
     path('accueil/', include('accueil.urls')),
     path('admin/', admin.site.urls),
     path('register/', register_request, name='register'),
-    path('login/', login_request, name='login')
+    path('login/', login_request, name='login'),
+    path('logout/', logout_request, name='logout'),
+    path('create/', userposts_create_view, name='userpost_create_view'),
+    path('list/', userposts_list_view, name='userpost_list_view'),
+    path('detail/(?P<url>\S+)/$', userposts_detail_view, name='userpost_detail_view')
 ]

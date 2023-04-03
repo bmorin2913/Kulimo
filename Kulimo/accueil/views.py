@@ -1,11 +1,12 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
-from .models import Member
-from django.shortcuts import  render, redirect
-from .forms import NewUserForm
-from django.contrib.auth import login, authenticate
+from .models import Member, UserPost
+from django.shortcuts import  render, redirect, get_object_or_404
+from .forms import NewUserForm, UserPostForm
+from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
+
 
 
 def accueil(request):
@@ -32,8 +33,8 @@ def testing(request):
   return HttpResponse(template.render(context, request))
 
 def register_request(request):
+	form = NewUserForm(request.POST)
 	if request.method == "POST":
-		form = NewUserForm(request.POST)
 		if form.is_valid():
 			user = form.save()
 			login(request, user)
@@ -60,3 +61,49 @@ def login_request(request):
 			messages.error(request,"Invalid username or password.")
 	form = AuthenticationForm()
 	return render(request=request, template_name="login.html", context={"login_form":form})
+
+def logout_request(request):
+	logout(request)
+	messages.info(request, "You have successfully logged out.") 
+	return redirect(main)
+
+#create view
+def userposts_create_view(request):
+    form= UserPostForm(request.POST or None)
+    
+
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+        return HttpResponseRedirect("/accueil")
+
+    
+    
+    context= {'form': form,
+              }
+    
+    return render(request, 'userposts-create-view.html', context)
+
+#list view
+def userposts_list_view(request):
+
+    allposts= UserPost.objects.all()
+    
+    context= {'allposts': allposts,
+              }
+    
+    return render(request, 'userposts-list-view.html', context)
+
+#detail view
+def userposts_detail_view(request, url=None):
+
+    post= get_object_or_404(UserPost, url=url)
+
+
+    
+    
+    context= {'post': post,
+              }
+    
+    return render(request, 'Blog/userposts-detail-view.html', context)
+	
