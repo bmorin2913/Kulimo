@@ -4,7 +4,13 @@
   <head>
     <title>Nous joindre</title> 
     <style> 
-      h1{text-align: center;}
+      h1{
+      text-align: center; 
+      font-size: x-large;
+    }
+      p{
+        font-size: large;
+      }
       </style> 
   </head>
 
@@ -15,14 +21,14 @@
       <h1>Nous rejoindre</h1>
       </header>
         <div class="row test">
-         <div class = "col-md-3"></div>
-          <div class="col-md-6">
+         <div class = "col-md-1"></div>
+          <div class="col-md-3" style="padding-top: 12.5%; padding-bottom: 12.5%;">
             <p><span class="glyphicon glyphicon-map-marker"></span>Laval, Canada</p>
             <p><span class="glyphicon glyphicon-phone"></span>Téléphone: 514 430 6375</p>
             <p><span class="glyphicon glyphicon-envelope"></span>Email: 2142903@bdeb.qc.ca</p>
           </div>
-          <div class="col-md-3">
-            <img style = "margin: 25px; width:25%; height: 25%;" src = "{% static './img/map.png' %}" class = "img-fluid">
+          <div class="col-md-8">
+            <img style = " width: 100%; height: 100%;" src = "{% static './img/map.png' %}" class = "img-fluid">
           </div>
         </div>
 
