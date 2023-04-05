@@ -32,5 +32,6 @@ urlpatterns = [
     path('logout/', logout_request, name='logout'),
     path('create/', userposts_create_view, name='userpost_create_view'),
     path('list/', userposts_list_view, name='userpost_list_view'),
-    path('detail/(?P<url>\S+)/$', userposts_detail_view, name='userpost_detail_view')
+    path('detail/(?P<url>\S+)/$', userposts_detail_view, name='userpost_detail_view'),
+    path("conditions_d'utilisations", include('accueil.urls'))
 ]
