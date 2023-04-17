@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Bootstrap Theme Company Page</title>
+  
+  <style>
+  </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img style="width: 90%; height: 90%;" src = "{% static './img/logo.png' %}" class = "img-fluid"></a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#about">ABOUT</a></li>
+              <li><a href="#services">SERVICES</a></li>
+              <li><a href="#portfolio">PORTFOLIO</a></li>
+              <li><a href="#pricing">PRICING</a></li>
+              <li><a href="#contact">CONTACT</a></li>
+
+              {% if user.is_authenticated %}
+
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Welcome, {{user.username}}</a>
+              </li>
+        
+              {% else %}
+        
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+        
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav>    
