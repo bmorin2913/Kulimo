@@ -118,3 +118,8 @@ def userposts_detail_view(request, url=None):
 def conditionsUtilisations(request):
 	template = loader.get_template('conditions_utilisations.html')
 	return HttpResponse(template.render())
+
+
+def aLire(requst):
+	template = loader.get_template('a_lire.html')
+	return HttpResponse(template.render())

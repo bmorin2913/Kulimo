@@ -1,0 +1,63 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>À propos de nous</title>
+  </head>
+    <style> 
+    h1{text-align: center;}
+    </style> 
+  </head>
+
+  <body>
+    {% block content %}
+    
+     <header>
+       <h1>À lire</h1>
+     </header>
+
+     <div class="row">
+        <div class="col-sm-3" style="background-color:rgb(255, 255, 255);">
+          <p> </p>
+        </div>
+        <div class="col-sm-6" style="background-color:rgb(255, 255, 255);">
+    
+            
+
+                
+                            <main>
+                             <p> Les activités suivants sont interdites sur Kulimo :</p>
+                             <ol>
+                                <li>Afficher des publicités pour des articles qui ne sont pas pertinents pour l'école n'est pas approprié.</li>
+                                <br>
+                                <li>Il est inapproprié de publier des annonces qui comportent des propos diffamatoires ou haineux.</li>
+                                <br>
+                                <li>Il est interdit de publier des annonces contenant une liste de mots-clés qui ne sont pas directement liés aux articles à vendre, ou dans une langue autre que le français ou l'anglais. </li>
+                                <br>
+                                <li>Les annonces ne doivent pas contenir d'informations trompeuses ou être dans une catégorie inappropriée, ni enfreindre les règlements pour les annonces d'animaux ou la politique d'égalité en matière de logement.</li>
+                                <br>
+                                <li>Enfin, il est interdit de publier des annonces destinées à tirer profit d'une catastrophe naturelle, des problèmes de santé ou de sécurité publique, ou d'un événement tragique.</li>
+                             </ol>
+                            </main>
+
+
+
+
+        </div>
+        <div class="col-sm-3" style="background-color:rgb(255, 255, 255);">
+            <p> </p>
+          </div>
+      </div>
+    
+
+
+
+
+
+
+    {% include "master.html" %}
+    {% endblock %} 
+  </body>
+</html>
