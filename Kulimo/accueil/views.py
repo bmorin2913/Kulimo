@@ -114,3 +114,7 @@ def userposts_detail_view(request, url=None):
     
     return render(request, 'Blog/userposts-detail-view.html', context)
 	
+
+def conditionsUtilisations(request):
+	template = loader.get_template('conditions_utilisations.html')
+	return HttpResponse(template.render())
