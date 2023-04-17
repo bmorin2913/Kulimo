@@ -72,7 +72,7 @@ def nousJoindre(resquest):
 def logout_request(request):
 	logout(request)
 	messages.info(request, "You have successfully logged out.") 
-	return redirect(main)
+	return redirect('/accueil/')
 
 #create view
 def userposts_create_view(request):
@@ -82,7 +82,7 @@ def userposts_create_view(request):
     if request.method == "POST":
         if form.is_valid():
             form.save()
-        return HttpResponseRedirect("/accueil")
+        return redirect('/accueil/')
 
     
     
@@ -112,7 +112,7 @@ def userposts_detail_view(request, url=None):
     context= {'post': post,
               }
     
-    return render(request, 'Blog/userposts-detail-view.html', context)
+    return render(request, 'userposts-detail-view.html', context)
 	
 
 def conditionsUtilisations(request):
