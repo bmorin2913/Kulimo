@@ -15,4 +15,6 @@ urlpatterns = [
     path('list', views.userposts_list_view, name= 'userpost_list_view'),
     path('detail', views.userposts_detail_view, name= 'userpost_detail_view'),
     path('conditions-d-utilisation', views.conditionsUtilisations, name = 'conditionsUtilisations')
+    path("conditions-d-utilisation", views.conditionsUtilisations, name = "conditionsUtilisations"),
+    path("a_lire", views.aLire, name = "a_lire")
 ]
