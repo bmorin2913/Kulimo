@@ -9,8 +9,14 @@
     <img style = "margin: 25px;" src = "{% static './img/logo.png' %}" class = "img-fluid">  
  
 </div>
-<div>
-    <li style="font-size: 200%; text-align: center;">{{ profile.user.username }}</li>
+<div> 
+    <style>
+        li{
+            font-size: 200%;
+            text-align: center;
+        }
+    </style>
+    <li>{{ profile.user.username }}</li>
     <li>@{{ profile.user.username|lower }}</li>
 </div>
 
