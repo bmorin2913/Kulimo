@@ -35,7 +35,7 @@ Notre projet est :
 
 # Captures d'écran :
 
-![Alt image](.\Read\images\Capture1.PNG)
+<img src = "Read\images\Capture2.PNG">
 ![Alt text](Read\images\Capture2.PNG)
 ![Alt text](Read\images\Capture3.PNG)
 
