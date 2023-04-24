@@ -12,6 +12,15 @@
 <div>
     <li style="font-size: 200%; text-align: center;">{{ profile.user.username }}</li>
     <li>@{{ profile.user.username|lower }}</li>
-</div>
+
+    <div class="block">
+        <div class="card">
+            <a href="{% url 'accueil:profile' profile.id %}">
+                <div class="card-content">
+                    <!-- ... More card code -->
+                </div>
+            </a>
+        </div>
+    </div>
 
 {% endfor %}
