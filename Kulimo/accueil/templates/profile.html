@@ -10,6 +10,19 @@
 
 </div>
 
+<div class="content">
+    {% for userpost in profile.user.userposts.all %}
+        <div class="box">
+            <strong>{{ userpost.title }}</strong>
+            <br>
+            {{ userpost.content }}
+            <span class="is-small has-text-grey-light">
+                ({{ userpost.date_published }})
+            </span>
+        </div>
+    {% endfor %}
+</div>
+
 <div class="block">
   <a href="{% url 'accueil:profile_list' %}">
       <button class="button is-dark is-outlined is-fullwidth">

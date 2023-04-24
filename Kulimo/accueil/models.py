@@ -17,7 +17,7 @@ class Member(models.Model):
 User= settings.AUTH_USER_MODEL
 
 class UserPost(models.Model):
-    user= models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    user= models.ForeignKey(User, related_name="userposts", on_delete=models.DO_NOTHING)
     title= models.CharField(max_length=100)
     content= models.TextField()
     date_published= models.DateTimeField(auto_now_add=True)

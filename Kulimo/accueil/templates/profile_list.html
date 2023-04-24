@@ -1,5 +1,5 @@
 {% load static %}
-{% for profile in profiles %}
+
 <!DOCTYPE html>
 <head>
     <title>Liste des profils</title>
@@ -9,6 +9,7 @@
     <img style = "margin: 25px; align-items: center;" src = "{% static './img/logo.png' %}" class = "img-fluid">  
  
 </div>
+{% for profile in profiles %}
 <div> 
     <style>
         li{
