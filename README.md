@@ -35,9 +35,9 @@ Notre projet est :
 
 # Captures d'écran :
 
-![Alt text](images/Capture1.PNG)
-![Alt text](images/Capture2.PNG)
-![Alt text](images/Capture3.PNG)
+![Alt text](Read\images\Capture1.PNG)
+![Alt text](Read\images\Capture2.PNG)
+![Alt text](Read\images\Capture3.PNG)
 
 
 
