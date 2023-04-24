@@ -6,7 +6,7 @@
     </style>
 </head>
 <div style="background-color: #1756a3;"> 
-    <img style = "margin: 25px;" src = "{% static './img/logo.png' %}" class = "img-fluid">  
+    <img style = "margin: 25px; align-items: center;" src = "{% static './img/logo.png' %}" class = "img-fluid">  
  
 </div>
 <div> 
@@ -16,17 +16,9 @@
             text-align: center;
         }
     </style>
-    <li>{{ profile.user.username }}</li>
-    <li>@{{ profile.user.username|lower }}</li>
-
-    <div class="block">
-        <div class="card">
-            <a href="{% url 'accueil:profile' profile.id %}">
-                <div class="card-content">
-                    <!-- ... More card code -->
-                </div>
-            </a>
-        </div>
+    <li><a href="{% url 'accueil:profile' profile.id %}">{{ profile.user.username }}</a></li>
+    
+  
     </div>
 
 {% endfor %}
