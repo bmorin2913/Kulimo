@@ -18,7 +18,7 @@ from django.urls import include, path
 from django.views.generic import RedirectView
 #from accueil.views import register_request, login_request
 from accueil.views import *
-from accueil.views import register_request, login_request, logout_request, userposts_create_view, userposts_list_view, userposts_detail_view
+from accueil.views import register_request, login_request, logout_request, userposts_create_view, userposts_list_view, userposts_detail_view, profile_list
 
 urlpatterns = [
     #path('', include('accueil.urls')), 
@@ -34,5 +34,6 @@ urlpatterns = [
     path('list/', userposts_list_view, name='userpost_list_view'),
     path('detail/(?P<url>\S+)/$', userposts_detail_view, name='userpost_detail_view'),
     path("conditions_d'utilisations/", include('accueil.urls')),
-    path("a_lire/", include('accueil.urls'))
+    path("a_lire/", include('accueil.urls')),
+    path("profile_list/", profile_list, name="profile_list")
 ]

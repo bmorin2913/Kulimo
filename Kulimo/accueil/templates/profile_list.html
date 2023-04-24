@@ -1,0 +1,8 @@
+{% for profile in profiles %}
+
+<div>
+    <p>{{ profile.user.username }}</p>
+    <p>@{{ profile.user.username|lower }}</p>
+</div>
+
+{% endfor %}

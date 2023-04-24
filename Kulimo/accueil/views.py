@@ -1,6 +1,6 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
-from .models import Member, UserPost
+from .models import Member, UserPost, Profile
 from django.shortcuts import  render, redirect, get_object_or_404
 from .forms import NewUserForm, UserPostForm
 from django.contrib.auth import login, authenticate, logout
@@ -123,3 +123,7 @@ def conditionsUtilisations(request):
 def aLire(requst):
 	template = loader.get_template('a_lire.html')
 	return HttpResponse(template.render())
+
+def profile_list(request):
+    profiles = Profile.objects.exclude(user=request.user)
+    return render(request, "profile_list.html", {"profiles": profiles})

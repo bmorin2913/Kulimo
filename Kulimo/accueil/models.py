@@ -2,6 +2,9 @@ from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.utils.text import slugify
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
 
 class Member(models.Model):
   firstname = models.CharField(max_length=255)
@@ -22,5 +25,14 @@ class UserPost(models.Model):
     def save(self, *args, **kwargs):
         self.url= slugify(self.title)
         super(UserPost, self).save(*args, **kwargs)    
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+@receiver(post_save, sender=User)
+def create_profile(sender, instance, created, **kwargs):
+    if created:
+        user_profile = Profile(user=instance)
+        user_profile.save()
 
 
