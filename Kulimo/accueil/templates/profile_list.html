@@ -1,8 +1,17 @@
+{% load static %}
 {% for profile in profiles %}
-
+<!DOCTYPE html>
+<head>
+    <title>Liste des profils</title>
+    </style>
+</head>
+<div style="background-color: #1756a3;"> 
+    <img style = "margin: 25px;" src = "{% static './img/logo.png' %}" class = "img-fluid">  
+ 
+</div>
 <div>
-    <p>{{ profile.user.username }}</p>
-    <p>@{{ profile.user.username|lower }}</p>
+    <li style="font-size: 200%; text-align: center;">{{ profile.user.username }}</li>
+    <li>@{{ profile.user.username|lower }}</li>
 </div>
 
 {% endfor %}
