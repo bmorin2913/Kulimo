@@ -35,9 +35,9 @@ Notre projet est :
 
 # Captures d'écran :
 
-<img src = "Kulimo\static\img\Capture1.PNG">
-<img src = "Kulimo\static\img\Capture2.PNG">
-<img src = "Kulimo\static\img\Capture3.PNG">
+<img src = "./Kulimo/static/img/Capture1.PNG">
+<img src = "./Kulimo/static/img/Capture2.PNG">
+<img src = "./Kulimo/static/img/Capture3.PNG">
 
 
 
