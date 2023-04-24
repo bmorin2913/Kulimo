@@ -1,5 +1,8 @@
 from django.urls import path
 from . import views
+from .views import profile_list, profile
+
+app_name = "accueil"
 
 urlpatterns = [
     path('', views.main, name='main'),
@@ -16,5 +19,12 @@ urlpatterns = [
     path('detail', views.userposts_detail_view, name= 'userpost_detail_view'),
     path('conditions-d-utilisation', views.conditionsUtilisations, name = 'conditionsUtilisations'),
     path("conditions-d-utilisation", views.conditionsUtilisations, name = "conditionsUtilisations"),
+<<<<<<< Updated upstream
     path("a_lire", views.aLire, name = "a_lire")
+=======
+    path("a_lire", views.aLire, name = "a_lire"),
+    path("profile_list/", views.profile_list, name="profile_list"),
+    path("profile/<int:pk>", views.profile, name="profile")
+
+>>>>>>> Stashed changes
 ]

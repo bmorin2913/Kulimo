@@ -1,0 +1,17 @@
+{% for profile in profiles %}
+
+<div>
+    <p>{{ profile.user.username }}</p>
+    <p>@{{ profile.user.username|lower }}</p>
+</div>
+<div class="block">
+    <div class="card">
+        <a href="{% url 'accueil:profile' profile.id %}">
+            <div class="card-content">
+                <!-- ... More card code -->
+            </div>
+        </a>
+    </div>
+</div>
+
+{% endfor %}

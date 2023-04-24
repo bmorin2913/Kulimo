@@ -1,0 +1,21 @@
+{% block content %}
+
+<div class="column">
+
+    <div class="block">
+    <h1 class="title is-1">
+        {{profile.user.username|upper}}'s posts
+    </h1>
+    </div>
+
+</div>
+
+<div class="block">
+  <a href="{% url 'accueil:profile_list' %}">
+      <button class="button is-dark is-outlined is-fullwidth">
+          All Profiles
+      </button>
+  </a>
+</div>
+
+{% endblock content %}
