@@ -20,8 +20,7 @@
      {% if user.is_authenticated %}
     <li><a href="{% url 'accueil:profile' profile.id %}">{{ profile.user.username }}</a></li>
     {% else %}
-    <li><a href="/login">{{ profile.user.username }}</a></li>
-    {% endif %}
+    <li><a href="/login"></a></li>
     
   
     </div>

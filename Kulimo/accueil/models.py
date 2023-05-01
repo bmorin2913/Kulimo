@@ -34,5 +34,10 @@ def create_profile(sender, instance, created, **kwargs):
     if created:
         user_profile = Profile(user=instance)
         user_profile.save()
+def index(request):
+    if request.user.is_authenticated:
+        print("Logged in")
+    else:
+        print("Not logged in")
 
 
