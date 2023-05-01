@@ -20,5 +20,6 @@ urlpatterns = [
     path('conditions-d-utilisation', views.conditionsUtilisations, name = 'conditionsUtilisations'),
     path("a_lire", views.aLire, name = "a_lire"),
     path("profile_list/", views.profile_list, name="profile_list"),
-    path("profile/<int:pk>", views.profile, name="profile")
+    path("profile/<int:pk>", views.profile, name="profile"),
+    path("list_announce/", views.list_announce, name="list_announce"),
 ]

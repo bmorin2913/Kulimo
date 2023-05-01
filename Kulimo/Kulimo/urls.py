@@ -35,5 +35,6 @@ urlpatterns = [
     path('detail/(?P<url>\S+)/$', userposts_detail_view, name='userpost_detail_view'),
     path("conditions_d'utilisations/", include('accueil.urls')),
     path("a_lire/", include('accueil.urls')),
-    path("profile_list/", profile_list, name="profile_list")
+    path("profile_list/", profile_list, name="profile_list"),
+    path("list_announce/", list_announce, name="list_announce"),
 ]

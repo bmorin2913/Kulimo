@@ -131,3 +131,8 @@ def profile_list(request):
 def profile(request, pk):
     profile = Profile.objects.get(pk=pk)
     return render(request, "profile.html", {"profile": profile})
+
+
+def list_announce(request):
+	template = loader.get_template('list_announce.html')
+	return HttpResponse(template.render())
