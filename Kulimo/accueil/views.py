@@ -2,10 +2,12 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from .models import Member, UserPost, Profile
 from django.shortcuts import  render, redirect, get_object_or_404
-from .forms import NewUserForm, UserPostForm
+from .forms import NewUserForm, UserPostForm, PostForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
+from django.urls import reverse_lazy
+from django.views.generic import TemplateView
 
 
 
@@ -24,13 +26,6 @@ def details(request, id):
 def main(request):
   template = loader.get_template('main.html')
   return HttpResponse(template.render())
-
-def testing(request):
-  template = loader.get_template('template.html')
-  context = {
-    'fruits': ['Apple', 'Banana', 'Cherry'],   
-  }
-  return HttpResponse(template.render(context, request))
 
 def register_request(request):
 	form = NewUserForm(request.POST)
@@ -74,47 +69,6 @@ def logout_request(request):
 	messages.info(request, "You have successfully logged out.") 
 	return redirect('/accueil/')
 
-#create view
-def userposts_create_view(request):
-    form= UserPostForm(request.POST or None)
-    
-
-    if request.method == "POST":
-        if form.is_valid():
-            form.save()
-        return redirect('/accueil/')
-
-    
-    
-    context= {'form': form,
-              }
-    
-    return render(request, 'userposts-create-view.html', context)
-
-#list view
-def userposts_list_view(request):
-
-    allposts= UserPost.objects.all()
-    
-    context= {'allposts': allposts,
-              }
-    
-    return render(request, 'userposts-list-view.html', context)
-
-#detail view
-def userposts_detail_view(request, url=None):
-
-    post= get_object_or_404(UserPost, url=url)
-
-
-    
-    
-    context= {'post': post,
-              }
-    
-    return render(request, 'userposts-detail-view.html', context)
-	
-
 def conditionsUtilisations(request):
 	template = loader.get_template('conditions_utilisations.html')
 	return HttpResponse(template.render())
@@ -131,3 +85,13 @@ def profile_list(request):
 def profile(request, pk):
     profile = Profile.objects.get(pk=pk)
     return render(request, "profile.html", {"profile": profile})
+
+def dashboard(request):
+    form = PostForm(request.POST or None)
+    if request.method == "POST":
+        if form.is_valid():
+            UserPost = form.save(commit=False)
+            UserPost.user = request.user
+            UserPost.save()
+            return redirect("dashboard")
+    return render(request, "dashboard.html", {"form": form})
