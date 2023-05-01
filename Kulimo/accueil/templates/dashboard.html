@@ -1,7 +1,7 @@
 {% block content %}
 
 <div class="column is-one-third">
-    <form method="post">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button class="button is-success is-fullwidth is-medium mt-5"

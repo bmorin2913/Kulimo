@@ -2,7 +2,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from .models import Member, UserPost, Profile
 from django.shortcuts import  render, redirect, get_object_or_404
-from .forms import NewUserForm, UserPostForm, PostForm
+from .forms import NewUserForm, UserPostForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
@@ -74,46 +74,6 @@ def logout_request(request):
 	messages.info(request, "You have successfully logged out.") 
 	return redirect('/accueil/')
 
-#create view
-def userposts_create_view(request):
-    form= UserPostForm(request.POST or None)
-    
-
-    if request.method == "POST":
-        if form.is_valid():
-            form.save()
-        return redirect('/accueil/')
-
-    
-    
-    context= {'form': form,
-              }
-    
-    return render(request, 'userposts-create-view.html', context)
-
-#list view
-def userposts_list_view(request):
-
-    allposts= UserPost.objects.all()
-    
-    context= {'allposts': allposts,
-              }
-    
-    return render(request, 'userposts-list-view.html', context)
-
-#detail view
-def userposts_detail_view(request, url=None):
-
-    post= get_object_or_404(UserPost, url=url)
-
-
-    
-    
-    context= {'post': post,
-              }
-    
-    return render(request, 'userposts-detail-view.html', context)
-	
 
 def conditionsUtilisations(request):
 	template = loader.get_template('conditions_utilisations.html')
@@ -133,12 +93,15 @@ def profile(request, pk):
     return render(request, "profile.html", {"profile": profile})
 
 def dashboard(request):
+    form = UserPostForm(request.POST or None)
     if request.method == "POST":
-        form = PostForm(request.POST)
+        print('test')
+        form = UserPostForm(request.POST, request.FILES)
         if form.is_valid():
-            UserPost = form.save(commit=False)
+            UserPost = form.save()
             UserPost.user = request.user
             UserPost.save()
-            return redirect("dashboard")
+            print('form saved')
+            return redirect("accueil")
     form = UserPostForm()
     return render(request, "dashboard.html", {"form": form})
