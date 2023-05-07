@@ -128,3 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 Kulimo/db.sqlite3
+*.pyc

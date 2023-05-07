@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.template import loader
+from django.template import loader, RequestContext
 from .models import Member, UserPost, Profile
 from django.shortcuts import  render, redirect, get_object_or_404
 from .forms import NewUserForm, UserPostForm
