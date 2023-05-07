@@ -14,8 +14,10 @@
     {% for userpost in profile.user.userposts.all %}
         <div class="box">
             <strong>{{ userpost.title }}</strong>
+            
             <br>
             {{ userpost.content }}
+            <img src="{{ userpost.image }}" />
             <span class="is-small has-text-grey-light">
                 ({{ userpost.date_published }})
             </span>

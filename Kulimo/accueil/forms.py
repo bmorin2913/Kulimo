@@ -22,6 +22,8 @@ class NewUserForm(UserCreationForm):
 		return user
 
 class UserPostForm(forms.ModelForm):
+	
     class Meta:
         model= UserPost
-        fields= ["title", "content"]
+        fields= ["title", "content", "image"]
+        exclude = ("user", )
