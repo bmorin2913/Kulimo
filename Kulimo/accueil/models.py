@@ -23,7 +23,7 @@ class UserPost(models.Model):
     title= models.CharField(max_length=100)
     content= models.TextField()
     date_published= models.DateTimeField(auto_now_add=True)
-    image= models.ImageField(upload_to='upload/')
+    image= models.ImageField(upload_to='images')
     url= models.SlugField(max_length=500, unique=True, blank=True, editable=False)
     def save(self, *args, **kwargs):
         self.url= slugify(self.title)

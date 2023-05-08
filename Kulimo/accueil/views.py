@@ -73,10 +73,13 @@ def dashboard(request):
         print('test')
         form = UserPostForm(request.POST, request.FILES)
         if form.is_valid():
-            UserPost = form.save()
+            print('form saved')
+            UserPost = form.save(commit=False)
             UserPost.user = request.user
             UserPost.save()
-            print('form saved')
-            return redirect("accueil")
-    form = UserPostForm()
+            img_object = form.instance
+            return render(request, "dashboard.html", {"form": form, 'img_obj': img_object})
+        else:
+          form = UserPostForm()
+
     return render(request, "dashboard.html", {"form": form})
