@@ -11,13 +11,17 @@
 </div>
 
 <div class="content">
-    {% for userpost in profile.user.userposts.all %}
+    {% for userpost in profile.user.userposts.all %} 
+
         <div class="box">
+
             <strong>{{ userpost.title }}</strong>
             
             <br>
             {{ userpost.content }}
-            <img src="{{ userpost.image.url }}" />
+
+            <img src="{{ userpost.image.url }}">
+
             <span class="is-small has-text-grey-light">
                 ({{ userpost.date_published }})
             </span>
