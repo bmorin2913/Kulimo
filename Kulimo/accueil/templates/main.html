@@ -33,11 +33,18 @@
     <p>Marché de livres usagés pour les étudiants du cégep.</p>
     
     <form class="form-inline">
+      {% if user.is_authenticated %}
+      <div class="input-group">
+        <button onclick="location.href = '/dashboard';" type="button" style = "margin: 25px;" class="btn inscription">Mettre en ligne une annonce</button>
+      </div>
+      {% else %}
         <div class="input-group">
             <button onclick="location.href = '/register';" type="button" style = "margin: 25px;" class="btn inscription">S'inscrire</button>
           <div class="input-group">
             <button onclick="location.href = '/login';" type="button" style ="margin: 25px;" class="btn connexion">Se connecter</button>
           </div>
+      {% endif %}
+
           {% if user.is_authenticated %}
           <div class="input-group">
             <button onclick="location.href = '/profile_list';" type="button" style="margin: 25px;" class="btn profils">Liste des profils</button>
