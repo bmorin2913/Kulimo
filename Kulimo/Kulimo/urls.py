@@ -16,26 +16,27 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import RedirectView
-#from accueil.views import register_request, login_request
-from accueil.views import *
-from accueil.views import register_request, login_request, logout_request, profile_list,dashboard
 from django.conf import settings
 from django.conf.urls.static import static
 
+from django.views.generic import TemplateView
+
+from django.contrib.auth import views as auth_views
+
+from accueil import urls as accueil_urls
+
+
 urlpatterns = [
-    #path('', include('accueil.urls')), 
-    path('', RedirectView.as_view(url='/accueil')), 
-    path('accueil/', include('accueil.urls')),
     path('admin/', admin.site.urls),
-    path('register/', register_request, name='register'),
-    path('login/', login_request, name='login'),
-    path('a_propos_de_nous/', include('accueil.urls')),
-    path('nous_joindre/', include('accueil.urls')),
-    path('logout/', logout_request, name='logout'),
-    path("conditions_d'utilisations/", include('accueil.urls')),
-    path("a_lire/", include('accueil.urls')),
-    path("profile_list/", profile_list, name="profile_list"),
-    path('dashboard/', dashboard, name= 'dashboard')
+
+    path('', include(accueil_urls)),
+    
+    path('', RedirectView.as_view(url='/accueil')), 
+
+    path('login/', auth_views.LoginView.as_view(redirect_authenticated_user=True, template_name='login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(next_page='accueil'), name='logout'),
+
+    path('accueil/', TemplateView.as_view(template_name='main.html'), name='accueil'), 
 ]
 
 if settings.DEBUG:

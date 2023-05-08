@@ -30,7 +30,9 @@
   
 
   <img style = "margin: 25px;" src = "{% static './img/logo.png' %}" class = "img-fluid">  
-    <p>Marché de livres usagés pour les étudiants du cégep.</p>
+    {% block content %}
+    <p>Marché de livres usagés pour les étudiants du cégep. #### {{user.email}} ####</p>
+    {% endblock content %}
     
     <form class="form-inline">
         <div class="input-group">
