@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 Kulimo/db.sqlite3
 *.pyc
+Kulimo/accueil/__pycache__/__init__.cpython-310.pyc
+*.pyc

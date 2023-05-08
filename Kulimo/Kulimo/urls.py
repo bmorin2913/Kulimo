@@ -24,6 +24,7 @@ from django.views.generic import TemplateView
 from django.contrib.auth import views as auth_views
 
 from accueil import urls as accueil_urls
+from accueil import views
 
 
 urlpatterns = [
@@ -34,7 +35,18 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/accueil')), 
 
     path('login/', auth_views.LoginView.as_view(redirect_authenticated_user=True, template_name='login.html'), name='login'),
+    path('register/', views.register_request, name='register'),
     path('logout/', auth_views.LogoutView.as_view(next_page='accueil'), name='logout'),
+
+    path('accueil/details/<int:id>', views.details, name='details'),
+    path('accueil/a_propos_de_nous/', views.aboutUs, name = 'aboutUs' ),
+    path('accueil/nous_joindre/', views.nousJoindre, name = 'nousJoindre' ),
+    path('accueil/conditions-d-utilisation/', views.conditionsUtilisations, name = 'conditionsUtilisations'),
+    path("accueil/a_lire/", views.aLire, name = "a_lire"),
+
+    path("profile_list/", views.profile_list, name="profile_list"),
+    path("profile/<int:pk>", views.profile, name="profile"),
+    path('dashboard/', views.dashboard, name= 'dashboard'),
 
     path('accueil/', TemplateView.as_view(template_name='main.html'), name='accueil'), 
 ]
