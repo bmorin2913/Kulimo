@@ -1,10 +1,20 @@
-{% block content %}
 
+{% load static %}
+<head>
+    <title>Kulimo BdeB</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+{% include 'navbar.html' %}
+{% block content %}
 <div class="column">
 
     <div class="block">
-    <h1 class="title is-1">
-        {{profile.user.username|upper}}'s posts
+    <h1 class="title is-1" style="padding-top: 2%;">
+     Les annonces de {{profile.user.username}}
     </h1>
     </div>
 
@@ -20,7 +30,7 @@
             <br>
             {{ userpost.content }}
 
-            <img src="{{ userpost.image.url }}">
+            <img style="width: 50%; height: 50%; padding: 5%;" src="{{ userpost.image.url }}">
 
             <span class="is-small has-text-grey-light">
                 ({{ userpost.date_published }})
@@ -29,7 +39,7 @@
     {% endfor %}
 </div>
 
-<div class="block">
+<div class="block" style="padding-top: 1%; padding-bottom: 1%;">
   <a href="{% url 'accueil:profile_list' %}">
       <button class="button is-dark is-outlined is-fullwidth">
           All Profiles
@@ -38,3 +48,4 @@
 </div>
 
 {% endblock content %}
+{% include "master.html" %}

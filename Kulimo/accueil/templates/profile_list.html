@@ -2,13 +2,16 @@
 
 <!DOCTYPE html>
 <head>
-    <title>Liste des profils</title>
+    <title>Kulimo BdeB</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
+    <link rel="stylesheet" href="{% static './css/style.css' %}"> 
+  </head>
+
+{% block content %}
 <div style="background-color: #1756a3;"> 
     <img style = "margin: 25px; align-items: center; padding-left: 22%; padding-right: 12%;" src = "{% static './img/logo.png' %}" class = "img-fluid">  
  
@@ -36,13 +39,9 @@
     
     <li><a href="{% url 'accueil:profile' profile.id %}">{{ profile.user.username }}</a></li>
     
-    
-    
-    
-
-    
-
 {% endfor %}
 </div>  
 <div class =" col-md-5" ></div>
 </div>
+{% endblock content %}
+{% include "master.html" %}
