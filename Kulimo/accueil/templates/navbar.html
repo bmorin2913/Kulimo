@@ -20,7 +20,7 @@
             <a class="navbar-brand" href="/accueil/"><img style="width: 90%; height: 90%;" src = "{% static './img/logo.png' %}" class = "img-fluid"></a>
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" style="padding-right: 25px;">
               <li><a href="a_propos_de_nous">A propos de nous</a></li>  
               <li><a href="nous_joindre">Nous joindre</a></li>  
               <li><a href="conditions-d-utilisation">Conditions d'utilisations</a></li>  
@@ -30,16 +30,16 @@
                 {% if user.is_authenticated %}
 
                 <li class="nav-item">
-                  <a class="nav-link" href="/logout">Logout</a>
+                  <a class="nav-link" href="/logout">Se deconnecter</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Welcome, {{user.username}}</a>
+                  <a class="nav-link" href="#">Bienvenue, {{user.username}}</a>
                 </li>
           
                 {% else %}
           
                 <li class="nav-item">
-                  <a class="nav-link" href="/login">Login</a>
+                  <a class="nav-link" href="/login">Se connecter</a>
                 </li>
           
                 {% endif %}
