@@ -7,6 +7,8 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 
+
+
 def accueil(request):
   template = loader.get_template('main.html')
   return HttpResponse(template.render())
@@ -42,6 +44,24 @@ def register_request(request):
 	form = NewUserForm()
 	return render (request=request, template_name="register.html", context={"register_form":form})
 
+def login_request(request):
+	if request.method == "POST":
+		form = AuthenticationForm(request, data=request.POST)
+		if form.is_valid():
+			username = form.cleaned_data.get('username')
+			password = form.cleaned_data.get('password')
+			user = authenticate(username=username, password=password)
+			if user is not None:
+				login(request, user)
+				messages.info(request, f"You are now logged in as {username}.")
+				return redirect('/accueil/')
+			else:
+				messages.error(request,"Invalid username or password.")
+		else:
+			messages.error(request,"Invalid username or password.")
+	form = AuthenticationForm()
+	return render(request=request, template_name="login.html", context={"login_form":form})
+
 def aboutUs(request):
 	template = loader.get_template('a_propos_de_nous.html')
 	return HttpResponse(template.render())
@@ -49,6 +69,12 @@ def aboutUs(request):
 def nousJoindre(resquest):
 	template = loader.get_template('nous_joindre.html')
 	return HttpResponse(template.render())
+
+def logout_request(request):
+	logout(request)
+	messages.info(request, "You have successfully logged out.") 
+	return redirect('/accueil/')
+
 
 def conditionsUtilisations(request):
 	template = loader.get_template('conditions_utilisations.html')
@@ -73,13 +99,20 @@ def dashboard(request):
         print('test')
         form = UserPostForm(request.POST, request.FILES)
         if form.is_valid():
-            print('form saved')
-            UserPost = form.save(commit=False)
+            UserPost = form.save()
             UserPost.user = request.user
             UserPost.save()
-            img_object = form.instance
-            return render(request, "dashboard.html", {"form": form, 'img_obj': img_object})
-        else:
-          form = UserPostForm()
-
+            print('form saved')
+            return redirect("accueil")
+    form = UserPostForm()
     return render(request, "dashboard.html", {"form": form})
+
+def rechercher(request):
+	if request.method == "POST":
+		searched = request.POST['searched']
+		posts = UserPost.objects.filter(title__contains=searched)
+
+		return render(request, 'recherche.html', {'searched':searched, 'posts':posts})
+	else:
+		return render(request, 'recherche.html', {})
+

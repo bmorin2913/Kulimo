@@ -1,0 +1,20 @@
+{% block content %}
+
+
+<form class="d-flex" method=POST action="{% url 'rechercher' %}">
+    {% csrf_token %}
+    <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search" name="searched">
+    <button onclick="location.href = '/rechercher';" class="btn btn-outline-secondary" type="submit">Rechercher</button>
+  </form>
+
+{% if searched %}
+    <h1>Vous avez recherché {{ searched }}</h1>
+    <br/>
+    {% for UserPost in posts %}
+        {{UserPost }}<br/>
+    {% endfor %}
+
+    {% else %}
+        <h1>Vous n'avez rien recherché...</h1>
+{% endif %}
+{% endblock %}

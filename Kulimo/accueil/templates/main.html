@@ -31,38 +31,35 @@
 
   <img style = "margin: 25px;" src = "{% static './img/logo.png' %}" class = "img-fluid">  
     <p>Marché de livres usagés pour les étudiants du cégep.</p>
-    
-    <form class="form-inline">
+
+    <div class="form-inline">
       {% if user.is_authenticated %}
       <div class="input-group">
-        <button onclick="location.href = '/dashboard';" type="button" style = "margin: 25px;" class="btn inscription">Mettre en ligne une annonce</button>
+        <button onclick="location.href = '/dashboard';" type="button" style = "margin: 25px;" class="btn poster">Mettre en ligne une annonce</button>
       </div>
+      
+      <div class="input-group">
+        <button onclick="location.href = '/profile_list';" type="button" style="margin: 25px;" class="btn profils">Liste des profils</button>
+      </div>
+      
+      <form class="d-flex" method=POST action="{% url 'rechercher' %}">
+        {% csrf_token %}
+        <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search" name="searched">
+        <button class="btn btn-outline-secondary" type="submit">Rechercher</button>
+      </form>
+
       {% else %}
         <div class="input-group">
-            <button onclick="location.href = '/register';" type="button" style = "margin: 25px;" class="btn inscription">S'inscrire</button>
+          <button onclick="location.href = '/register';" type="button" style = "margin: 25px;" class="btn inscription">S'inscrire</button>
+          
           <div class="input-group">
             <button onclick="location.href = '/login';" type="button" style ="margin: 25px;" class="btn connexion">Se connecter</button>
           </div>
       {% endif %}
-
-          {% if user.is_authenticated %}
-          <div class="input-group">
-            <button onclick="location.href = '/profile_list';" type="button" style="margin: 25px;" class="btn profils">Liste des profils</button>
-          </div>
-          {% else %}
-          <div class="input-group">
-            <button onclick="location.href = '/login';" type="button" style="margin: 25px;" class="btn profils">Liste des profils</button>
-          </div>
-          {% endif %}
           
         </div>
-      </form>
+      </div>
     </div>
-
-
-
-
-      
     {% include "footer.html" %}
   
 

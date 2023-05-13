@@ -47,6 +47,7 @@ urlpatterns = [
     path("profile_list/", views.profile_list, name="profile_list"),
     path("profile/<int:pk>", views.profile, name="profile"),
     path('dashboard/', views.dashboard, name= 'dashboard'),
+    path('rechercher/', views.rechercher, name= 'rechercher'),
 
     path('accueil/', TemplateView.as_view(template_name='main.html'), name='accueil'), 
 ]
