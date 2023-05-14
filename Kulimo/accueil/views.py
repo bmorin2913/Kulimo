@@ -115,4 +115,3 @@ def rechercher(request):
 		return render(request, 'recherche.html', {'searched':searched, 'posts':posts})
 	else:
 		return render(request, 'recherche.html', {})
-

@@ -1,6 +1,5 @@
 {% block content %}
 
-
 <form class="d-flex" method=POST action="{% url 'rechercher' %}">
     {% csrf_token %}
     <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search" name="searched">
@@ -10,8 +9,22 @@
 {% if searched %}
     <h1>Vous avez recherché {{ searched }}</h1>
     <br/>
-    {% for UserPost in posts %}
-        {{UserPost }}<br/>
+    {% for userpost in posts %}
+    <div class="box">
+
+        <strong>{{ userpost.title }}</strong>
+        
+        <br>
+        {{ userpost.content }}
+
+        <img src="{{ userpost.image.url }}">
+
+        <span class="is-small has-text-grey-light">
+            (posted by 
+            <li><a href="{% url 'accueil:profile' profile.id %}">{{ userpost.user }}</a></li> 
+            on {{ userpost.date_published }})
+        </span>
+    </div>
     {% endfor %}
 
     {% else %}
