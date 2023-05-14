@@ -21,7 +21,7 @@
 
         <span class="is-small has-text-grey-light">
             (posted by 
-            <li><a href="{% url 'accueil:profile' profile.id %}">{{ userpost.user }}</a></li> 
+            <li><a href="{% url 'accueil:profile' userpost.user.profile.id %}">{{ userpost.user }}</a></li> 
             on {{ userpost.date_published }})
         </span>
     </div>
