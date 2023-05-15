@@ -16,25 +16,34 @@
     <h1 class="title is-1" style="padding-top: 2%;">
      Les annonces de {{profile.user.username}}
     </h1>
+    <br></br>
     </div>
 
 </div>
 
 <div class="content">
+                
+            
     {% for userpost in profile.user.userposts.all %} 
 
         <div class="box">
-
-            <strong>{{ userpost.title }}</strong>
+            <div class = "col-md-5"></div>
+            <div class = "col-md-6"></div>
+            <div class = "col-md-1"></div>   
+            <strong style="font-size: 150% ; padding: 2%;">{{ userpost.title }}</strong>
+            <br></br>    
+              
+            <img style="width: 50%; height: auto; padding: 2%; overflow: hidden;" src="{{ userpost.image.url }}">
+           
+           {{ userpost.content }}
+        
             
-            <br>
-            {{ userpost.content }}
-
-            <img style="width: 50%; height: 50%; padding: 5%;" src="{{ userpost.image.url }}">
-
-            <span class="is-small has-text-grey-light">
-                ({{ userpost.date_published }})
+            
+      <span class="is-small has-text-grey-light" style="padding-left: 5%;" >
+               Annonce postée le : {{ userpost.date_published }}
             </span>
+            
+            
         </div>
     {% endfor %}
 </div>
@@ -46,6 +55,5 @@
       </button>
   </a>
 </div>
-
-{% endblock content %}
 {% include "master.html" %}
+{% endblock content %}

@@ -1,6 +1,19 @@
+{% load static %}
+<head>
+    <title>Kulimo BdeB</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+{% include 'navbar.html' %}
 {% block content %}
-
-<div class="column is-one-third">
+<div class="row test">
+<div class = "col-md-5"></div>
+<div class = "col-md-7" style="padding-top: 10%;">
+    <strong style="font-size: 200%;">Créer un poste </strong>
+    
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
@@ -13,5 +26,10 @@
         <h3>Succesfully uploaded : {{img_obj.caption}}</h3>  
         <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">  
     {% endif %}
+
 </div>
+  
+</div>
+
+{% include "master.html" %}
 {% endblock content %}
