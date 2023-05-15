@@ -10,7 +10,10 @@ Notre projet est :
     <li>Python</li>
     <li>Django</li>
     <li>Bootstrap</li>
+    <li>HTML</li>
     <li>CSS</li>
+    <li>Javascript</li>
+    <li>Ajax</li>
 
 <h2>Autres modules requis pour Python:</h2>
 <ul>
@@ -23,7 +26,7 @@ Notre projet est :
 
     Faire un virtual environment : https://www.w3schools.com/django/django_create_virtual_environment.php
 
-    Faire les installations requis : Python, Pip, Django
+    Faire les installations requis : Python, Pip, Django, crispyforms
 
     pip install django-crispy-forms
 
