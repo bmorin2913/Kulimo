@@ -30,12 +30,13 @@
             <div class = "col-md-5"></div>
             <div class = "col-md-6"></div>
             <div class = "col-md-1"></div>   
-            <strong style="font-size: 150% ; padding: 2%;">{{ userpost.title }}</strong>
-            <br></br>    
-              
-            <img style="width: 50%; height: auto; padding: 2%; overflow: hidden;" src="{{ userpost.image.url }}">
+            <strong style="font-size: 250% ; padding: 2%;">{{ userpost.title }}</strong>
+             
+            <div style="font-size: 150%; padding-left: 3%;">{{ userpost.content }}</div> 
+            
+            <img style="width: 50%; height: auto; padding: 2%; overflow: hidden; " src="{{ userpost.image.url }}">
+            <br>
            
-           {{ userpost.content }}
         
             
             
@@ -43,7 +44,7 @@
                Annonce postée le : {{ userpost.date_published }}
             </span>
             
-            
+         <hr style="height: 3px; background-color: lightslategray;">   
         </div>
     {% endfor %}
 </div>
