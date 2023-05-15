@@ -1,30 +1,50 @@
-{% block content %}
 
+{% load static %}
+<head>
+    <title>Kulimo BdeB</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+{% include 'navbar.html' %}
+{% block content %}
 <div class="column">
 
     <div class="block">
-    <h1 class="title is-1">
-        {{profile.user.username|upper}}'s posts
+    <h1 class="title is-1" style="padding-top: 2%;">
+     Les annonces de {{profile.user.username}}
     </h1>
+    <br></br>
     </div>
 
 </div>
 
 <div class="content">
+                
+            
     {% for userpost in profile.user.userposts.all %} 
 
         <div class="box">
-
-            <strong>{{ userpost.title }}</strong>
+            <div class = "col-md-5"></div>
+            <div class = "col-md-6"></div>
+            <div class = "col-md-1"></div>   
+            <strong style="font-size: 250% ; padding: 2%;">{{ userpost.title }}</strong>
+             
+            <div style="font-size: 150%; padding-left: 3%;">{{ userpost.content }}</div> 
             
+            <img style="width: 50%; height: auto; padding: 2%; overflow: hidden; " src="{{ userpost.image.url }}">
             <br>
-            {{ userpost.content }}
-
-            <img src="{{ userpost.image.url }}">
-
-            <span class="is-small has-text-grey-light">
-                ({{ userpost.date_published }})
+           
+        
+            
+            
+      <span class="is-small has-text-grey-light" style="padding-left: 5%;" >
+               Annonce postée le : {{ userpost.date_published }}
             </span>
+            
+         <hr style="height: 3px; background-color: lightslategray;">   
         </div>
     {% endfor %}
 </div>
@@ -38,11 +58,12 @@
 </form>
 
 <div class="block">
+<div class="block" style="padding-top: 1%; padding-bottom: 1%;">
   <a href="{% url 'accueil:profile_list' %}">
       <button class="button is-dark is-outlined is-fullwidth">
           All Profiles
       </button>
   </a>
 </div>
-
+{% include "master.html" %}
 {% endblock content %}
