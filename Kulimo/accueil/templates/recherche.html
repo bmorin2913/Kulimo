@@ -11,20 +11,26 @@
     <br>
     {% for userpost in posts %}
     <div class="box">
-
-        <strong>{{ userpost.title }}</strong>
+        <div class = "col-md-5"></div>
+        <div class = "col-md-6"></div>
+        <div class = "col-md-1"></div>   
+        <strong style="font-size: 250% ; padding: 2%;">{{ userpost.title }}</strong>
+         
+        <div style="font-size: 150%; padding-left: 3%;">{{ userpost.content }}</div> 
         
+        <img style="width: 50%; height: auto; padding: 2%; overflow: hidden; " src="{{ userpost.image.url }}">
         <br>
-        {{ userpost.content }}
-        <br>
-
-        <img src="{{ userpost.image.url }}">
-        <br>
-
+       
+    
+        
+        
         <span class="is-small has-text-grey-light">
-            (posted by <a href="{% url 'accueil:profile' userpost.user.profile.id %}">{{ userpost.user }}</a> on {{ userpost.date_published }})
+            (Publié par <a href="{% url 'accueil:profile' userpost.user.profile.id %}">{{ userpost.user }}</a> le {{ userpost.date_published }})
         </span>
+        
+     <hr style="height: 3px; background-color: lightslategray;">   
     </div>
+
     {% endfor %}
 
     {% else %}

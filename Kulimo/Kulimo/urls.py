@@ -38,11 +38,11 @@ urlpatterns = [
     path('register/', views.register_request, name='register'),
     path('logout/', auth_views.LogoutView.as_view(next_page='accueil'), name='logout'),
 
-    path('accueil/details/<int:id>', views.details, name='details'),
-    path('accueil/a_propos_de_nous/', views.aboutUs, name = 'aboutUs' ),
-    path('accueil/nous_joindre/', views.nousJoindre, name = 'nousJoindre' ),
-    path('accueil/conditions-d-utilisation/', views.conditionsUtilisations, name = 'conditionsUtilisations'),
-    path("accueil/a_lire/", views.aLire, name = "a_lire"),
+    path('details/<int:id>', views.details, name='details'),
+    path('a_propos_de_nous/', views.aboutUs, name = 'aboutUs' ),
+    path('nous_joindre/', views.nousJoindre, name = 'nousJoindre' ),
+    path('conditions-d-utilisation/', views.conditionsUtilisations, name = 'conditionsUtilisations'),
+    path('a_lire/', views.aLire, name = 'a_lire'),
 
     path("profile_list/", views.profile_list, name="profile_list"),
     path("profile/<int:pk>", views.profile, name="profile"),

@@ -81,7 +81,7 @@ def conditionsUtilisations(request):
 	return HttpResponse(template.render())
 
 
-def aLire(requst):
+def aLire(request):
 	template = loader.get_template('a_lire.html')
 	return HttpResponse(template.render())
 

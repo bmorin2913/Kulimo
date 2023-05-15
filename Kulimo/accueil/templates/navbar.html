@@ -21,10 +21,10 @@
           </div>
           <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right" style="padding-right: 25px;">
-              <li><a href="a_propos_de_nous">A propos de nous</a></li>  
-              <li><a href="nous_joindre">Nous joindre</a></li>  
-              <li><a href="conditions-d-utilisation">Conditions d'utilisations</a></li>  
-              <li><a href="a_lire">A lire</a></li>
+              <li><a href="{% url 'accueil:aboutUs' %}">A propos de nous</a></li>  
+              <li><a href="{% url 'accueil:nousJoindre' %}">Nous joindre</a></li>  
+              <li><a href="{% url 'accueil:conditionsUtilisations' %}">Conditions d'utilisations</a></li>
+              <li><a href="{% url 'accueil:a_lire' %}">A lire</a></li>
 
               {% block content %} 
                 {% if user.is_authenticated %}
