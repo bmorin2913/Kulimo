@@ -17,6 +17,8 @@ urlpatterns = [
     path("profile/<int:pk>", views.profile, name="profile"),
     path('dashboard', views.dashboard, name= 'dashboard'),
     path('rechercher', views.rechercher, name= 'rechercher'),
+    path('rooms/<str:room>/', views.room, name='room'),
+    path('checkview', views.checkview, name='checkview'),
 ]
 
 if settings.DEBUG:

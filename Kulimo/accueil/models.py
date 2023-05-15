@@ -32,12 +32,22 @@ class UserPost(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
+class Room(models.Model):
+   name = models.CharField(max_length=1000)
+
+class Message(models.Model):
+   value = models.CharField(max_length=1000)
+   date = models.DateTimeField(auto_now_add=True)
+   user = models.CharField(max_length=1000)
+   room = models.CharField(max_length=1000000)
+
 
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
     if created:
         user_profile = Profile(user=instance)
         user_profile.save()
+
 
 
 

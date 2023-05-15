@@ -50,6 +50,11 @@ urlpatterns = [
     path('rechercher/', views.rechercher, name= 'rechercher'),
 
     path('accueil/', TemplateView.as_view(template_name='main.html'), name='accueil'), 
+
+    path('profile/checkview', views.checkview, name='checkview'),
+    path('send', views.send, name='send'),
+    path('rooms/<str:room>/', views.room, name='room'),
+    path('getMessages/rooms/<str:room>/', views.getMessages, name='getMessages'),
 ]
 
 if settings.DEBUG:
