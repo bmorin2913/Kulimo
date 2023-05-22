@@ -38,7 +38,6 @@ urlpatterns = [
     path('register/', views.register_request, name='register'),
     path('logout/', auth_views.LogoutView.as_view(next_page='accueil'), name='logout'),
 
-    path('details/<int:id>', views.details, name='details'),
     path('a_propos_de_nous/', views.aboutUs, name = 'aboutUs' ),
     path('nous_joindre/', views.nousJoindre, name = 'nousJoindre' ),
     path('conditions-d-utilisation/', views.conditionsUtilisations, name = 'conditionsUtilisations'),

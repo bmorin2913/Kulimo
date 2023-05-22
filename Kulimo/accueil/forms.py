@@ -4,8 +4,10 @@ from django.contrib.auth.models import User
 from .models import UserPost
 
 
-# Create your forms here.
+# Classe qui définit les différents formulaires que l'utilisateur peut remplir
 
+
+# Le formulaire pour la création d'un compte
 class NewUserForm(UserCreationForm):
 	email = forms.EmailField(required=True)
 
@@ -20,7 +22,8 @@ class NewUserForm(UserCreationForm):
 		if commit:
 			user.save()
 		return user
-
+	
+# Le formulaire pour la création d'une publication
 class UserPostForm(forms.ModelForm):
 	
     class Meta:

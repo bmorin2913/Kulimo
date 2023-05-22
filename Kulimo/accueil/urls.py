@@ -4,10 +4,11 @@ from .views import profile_list, profile
 from django.conf import settings
 from django.conf.urls.static import static
 
+# Fichier qui permet d'associer nos adresses URL à nos méthodes 'views'
+
 app_name = "accueil"
 
 urlpatterns = [
-    path('details/<int:id>', views.details, name='details'),
     path("register", views.register_request, name="register"),
     path('a_propos_de_nous', views.aboutUs, name = 'aboutUs' ),
     path('nous_joindre', views.nousJoindre, name = 'nousJoindre' ),
