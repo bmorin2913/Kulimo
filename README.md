@@ -20,17 +20,20 @@ Notre projet est :
     <li>Django</li>
     <li>django-crispy-forms</li>
     <li>crispy-bootstrap5</li>
+    <li>Pillow</li>
 </ul>
 
 <h2>Utilisation :</h2>
 
     Faire un virtual environment : https://www.w3schools.com/django/django_create_virtual_environment.php
 
-    Faire les installations requis : Python, Pip, Django, crispyforms
+    Faire les installations requis : Python, Pip, Django, crispyforms, Pillow
 
-    pip install django-crispy-forms
+    py -m pip install django-crispy-forms
 
-    pip install crispy-bootstrap5 
+    py -m pip install crispy-bootstrap5 
+    
+    py -m pip install Pillow
 
     Mettre dans le cmd : py manage.py runserver
     
